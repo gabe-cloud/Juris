@@ -61,8 +61,6 @@ app.use('/usuario', require('./routes/usuario'));
 
 //Public files
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'views')));
-
 
 //Starting server
 app.listen(app.get('port'), () =>{
