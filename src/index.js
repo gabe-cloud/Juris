@@ -16,9 +16,8 @@ const {database} = require('./keys');
 const app = express();
 require('./lib/passport');
 
-const port = process.env.PORT;
 //Settings
-app.listen(port || 3000);
+app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
@@ -30,11 +29,18 @@ app.engine('.hbs', exphbs.engine({
 app.set('view engine', '.hbs');
 
 //Middlewares
+app.use(session({
+    secret: 'try',
+    resave: false,
+    saveUninitialized: false,
+    store: new MySqlStore(database)
+}));
 app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // Global Variables
@@ -56,3 +62,8 @@ app.use('/usuario', require('./routes/usuario'));
 //Public files
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//Starting server
+app.listen(app.get('port'), () =>{
+    console.log('Server on port', app.get('port'))
+})
