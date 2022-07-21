@@ -12,8 +12,6 @@ const passport = require('passport');
 const {database} = require('./keys');
 
 
-app.get('/', (req, res) => res.send("Hola"))
-
 //Initializations 
 const app = express();
 require('./lib/passport');
