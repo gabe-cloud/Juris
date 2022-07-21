@@ -16,8 +16,9 @@ const {database} = require('./keys');
 const app = express();
 require('./lib/passport');
 
+const port = process.env.PORT;
 //Settings
-app.set('port', process.env.PORT || 3000);
+app.listen(port || 3000);
 app.set('views', path.join(__dirname,'views'));
 app.engine('.hbs', exphbs.engine({
     defaultLayout: 'main',
@@ -62,8 +63,3 @@ app.use('/usuario', require('./routes/usuario'));
 //Public files
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//Starting server
-app.listen(app.get('port'), () =>{
-    console.log('Server on port', app.get('port'))
-})
