@@ -15,7 +15,6 @@ const {database} = require('./keys');
 //Initializations 
 const app = express();
 require('./lib/passport');
-app.use(express.static('views'))
 
 //Settings
 app.set('port', process.env.PORT || 3000);
