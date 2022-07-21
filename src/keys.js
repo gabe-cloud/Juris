@@ -1,10 +1,9 @@
 module.exports = {
-
-    database:{
-        host: 'localhost',
-        user: 'root',
-        password: 'password',
-        database: 'juris'
-    }
-
+  database: {
+    host: "sql.freedb.tech",
+    port: "3306",
+    user: "",
+    password: "",
+    database: "freedb_testjuri",
+  },
 };
