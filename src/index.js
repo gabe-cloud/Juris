@@ -30,18 +30,11 @@ app.engine('.hbs', exphbs.engine({
 app.set('view engine', '.hbs');
 
 //Middlewares
-app.use(session({
-    secret: 'try',
-    resave: false,
-    saveUninitialized: false,
-    store: new MySqlStore(database)
-}));
 app.use(flash());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 
 // Global Variables
