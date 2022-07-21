@@ -1,0 +1,32 @@
+<div class="container p-4">
+    <div class="row">
+<table class="table table-bordered">
+  <thead class="thead">
+    <tr>
+      <th scope="col">ID Expediente</th>
+      <th scope="col">ID Tribunal</th>
+      <th scope="col">ID Interviniente</th>
+      <th scope="col">Fecha Actuación</th>
+      <th scope="col">Descripción Actuación</th>
+      <th scope="col">EDIT</th>
+
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each expedientecontrol}}
+    <tr>
+      <td>{{id_expedientecontrol}}</td>
+      <td>{{id_tribunal}}</td>
+      <td>{{ci}}</td>
+      <td>{{fecha_actuacion}}</td>
+      <td>{{descripcion_actuacion}}</td>
+      <td>
+      <a href="/expediente/control/delete/{{id_expedientecontrol}}" class="btn btn-danger">Eliminar</a>
+      <a href="/expediente/control/edit/{{id_expedientecontrol}}/{{descripcion_actuacion}}" class="btn btn-success">Actualizar</a>
+      </td>
+    </tr>
+    {{/each}}
+</table>
+</div>
+</div>

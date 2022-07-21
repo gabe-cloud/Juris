@@ -1,0 +1,39 @@
+<div class="container p-4">
+    <div class="row">
+
+<table class="table table-bordered">
+  <thead class="thead">
+    <tr>
+      <th scope="col">NOMBRE INTERVINIENTE</th>
+      <th scope="col">TIPO INTERVENCIÓN</th>
+      <th scope="col">ABOGADOS</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each intervinientee}}
+    <tr>
+      <td>{{nombre}} {{apellido}}</td>
+      <td>{{tipo_intervencion}}</td>
+      <td>{{abogados}}</td>
+    </tr>
+    {{/each}}
+
+<table class="table table-bordered">
+  <thead class="thead">
+    <tr>
+      <th scope="col">FECHA</th>
+      <th scope="col">DESCRIPCIÓN DE LA ACTUACIÓN</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each expedienteejecucion}}
+    <tr>
+      <td>{{fecha_actuacion}}</td>
+      <td>{{descripcion_actuacion}}</td>
+    </tr>
+    {{/each}}
+</table>
+</div>
+</div>

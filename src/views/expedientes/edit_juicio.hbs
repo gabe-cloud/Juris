@@ -1,0 +1,35 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+
+            <div class="card">
+                <div class="card-body">
+                    <form action="/expediente/juicio/edit/{{expedientejuicio.id_expedientejuicio}}/{{expedientejuicio.descripcion_actuacion}}" method="POST">
+                    <p><center>CARGA DE NUEVO EXPEDIENTE</center></p>
+                        <div class="form-group">
+                            <input type="text" value= "{{expedientejuicio.id_expedientejuicio}} "name="id_expedientejuicio" class="form-control" placeholder="Número Expediente" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value= "{{expedientejuicio.id_tribunal}}" name="id_tribunal" class="form-control" placeholder="ID Tribunal" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" value= "{{expedientejuicio.econtrol_referencia}}" readonly onmousedown="return false;" name="econtrol_referencia" class="form-control" placeholder="ID Interviniente" autofocus>
+                        </div>
+                        <div class="form-group">
+                        <p>Fecha de actuación: <input type="date" value= "{{expedientejuicio.fecha_actuacion}}" name="fecha_actuacion"></p>
+                        </div>
+                        <div class="form-group">
+                            <textarea  name="descripcion_actuacion" rows="2" class="form-control" placeholder="Descripción" >{{expedientejuicio.descripcion_actuacion}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
