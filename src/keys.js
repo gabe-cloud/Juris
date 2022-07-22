@@ -1,9 +1,11 @@
+const ENV = require("./constants");
+
 module.exports = {
   database: {
-    host: "sql.freedb.tech",
-    port: "3306",
-    user: "",
-    password: "",
-    database: "freedb_testjuri",
+    host: ENV.HOST_DB,
+    port: ENV.PORT_DB,
+    user: ENV.USER_DB,
+    password: ENV.PASSWORD_DB,
+    database: ENV.DATABASE_NAME,
   },
 };
